@@ -1,4 +1,4 @@
-# 🛍️ EasyShop - Modern E-commerce Platform
+# 🛍️ ShopyShop - Modern E-commerce Platform
 
 [![License](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
 
@@ -291,13 +291,6 @@ For questions or feedback, please open an issue or contact the maintainers:
 - Project Link: [https://github.com/iemafzalhassan/easyshop](https://github.com/iemafzalhassan/easyshop)
 
 ---
-
-<div align="center">
-  <p>
-    Made with ❤️ by <a href="https://iemafzalhassan.tech" target="_blank"><b>Md. Afzal Hassan Ehsani</b></a>
-  </p>
-</div>
-
 
 # EasyShop Deployment
 
