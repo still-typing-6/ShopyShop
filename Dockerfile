@@ -19,18 +19,6 @@ ENV MONGODB_URI=$MONGODB_URI \
 
 RUN apt-get update && \
     apt-get upgrade -y && \
-    # Use a retry mechanism for installing packages
-    for i in $(seq 1 3); do \
-      echo "Attempt $i to install dependencies..." && \
-      apt-get install -y --no-install-recommends \
-        python3 \
-        make \
-        g++ && \
-      break || \
-      { echo "Retrying in 5 seconds..."; sleep 5; }; \
-    done && \
-    apt-get clean && \
-    rm -rf /var/lib/apt/lists/*
 
 WORKDIR /app
 COPY package*.json ./
