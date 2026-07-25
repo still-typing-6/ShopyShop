@@ -1,5 +1,7 @@
-FROM node:trixie AS builder
+# Stage 1: Development/Build Stage
+FROM node:18-slim AS builder
 
+# Add build-time environment variables
 ARG MONGODB_URI=mongodb://localhost:27017/easyshop
 ARG REDIS_URI=redis://localhost:6379
 ARG NEXTAUTH_URL
@@ -8,6 +10,7 @@ ARG NEXTAUTH_SECRET
 ARG JWT_SECRET
 ARG NODE_ENV=production
 
+# Set environment variables for the build
 ENV MONGODB_URI=$MONGODB_URI \
     REDIS_URI=$REDIS_URI \
     NEXTAUTH_URL=$NEXTAUTH_URL \
@@ -17,6 +20,7 @@ ENV MONGODB_URI=$MONGODB_URI \
     NODE_ENV=$NODE_ENV \
     NEXT_PHASE=phase-production-build
 
+# Install system build dependencies with retry mechanism
 RUN apt-get update && \
     apt-get upgrade -y && \
     # Use a retry mechanism for installing packages
